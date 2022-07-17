@@ -34,7 +34,7 @@ const Navbar = () => {
             />
           </a>
         </Link>
-        <p className="p-4">Browse</p>
+        <p className="p-4 font-bold">Browse</p>
         <div className="p-4">
           <Menu as="div" className="relative text-left">
             <div className="flex">
@@ -106,8 +106,8 @@ const Navbar = () => {
         </div>
       </div>
       {/* Middle */}
-      <div className="hidden md:flex grow-[2] items-center justify-center">
-        <div className="bg-gray-800 text-white flex justify-between items-center max-w-[400px] w-full m-auto p-2 px-4 rounded-full">
+      <div className="hidden md:flex grow-[2] items-center justify-center cursor-text">
+        <div className="bg-gray-800 text-white flex justify-between items-center max-w-[400px] w-full m-auto p-2 px-4 rounded-md">
           <div>
             <input
               type="text"
@@ -115,15 +115,15 @@ const Navbar = () => {
               placeholder="Buscar"
             />
           </div>
-          <div>
-            <BsSearch />
+          <div className="cursor-pointer px-2">
+            <BsSearch className="font-bold" />
           </div>
         </div>
       </div>
       {/* Right Side */}
       <div className="hidden md:flex grow items-center justify-end">
         <div className="flex items-center">
-          <Link href="/">
+          <Link href="/account">
             <button className="px-4 py-[6px] rounded-full font-bold bg-[#3F00E1] mr-2">
               Conta
             </button>
@@ -156,7 +156,7 @@ const Navbar = () => {
             <Link href="/">Categorias</Link>
           </li>
           <li className="p-4 text-3xl font-bold">
-            <Link href="/">Conta</Link>
+            <Link href="/account">Conta</Link>
           </li>
         </ul>
       </div>
