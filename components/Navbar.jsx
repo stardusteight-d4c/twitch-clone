@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { Fragment, useState } from 'react'
 import { Menu, Transition } from '@headlessui/react'
+import { useSession, signIn, signOut } from 'next-auth/react'
 
 import { BsPerson, BsSearch, BsThreeDotsVertical } from 'react-icons/bs'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
@@ -19,10 +20,13 @@ const Navbar = () => {
     setNav(!nav)
   }
 
+  const { data: session } = useSession()
+  // console.log(session)
+
   return (
-    <nav className="fixed h-14 w-full flex flex-nowrap items-center p-4 bg-[#0e0e10] mb-[2px]">
+    <nav className="fixed h-14 w-full flex flex-nowrap items-center p-4 bg-[#0e0e10] mb-[2px] z-10">
       {/* Left Side */}
-      <div className="flex grow items-center justify-start">
+      <div className="flex items-center justify-start grow">
         <Link href="/">
           <a className="flex">
             <Image
@@ -30,13 +34,13 @@ const Navbar = () => {
               alt="/"
               width="36px"
               height="36px"
-              className="cursor-pointer z-10"
+              className="z-10 cursor-pointer"
             />
           </a>
         </Link>
         <p className="p-4 font-bold">Browse</p>
         <div className="p-4">
-          <Menu as="div" className="relative text-left">
+          <Menu as="div" className="relative text-left ">
             <div className="flex">
               <Menu.Button>
                 <BsThreeDotsVertical size={20} />
@@ -65,7 +69,7 @@ const Navbar = () => {
                           'block px-4 py-2 text-sm'
                         )}
                       >
-                        Settings
+                        Configurações
                       </a>
                     )}
                   </Menu.Item>
@@ -80,7 +84,7 @@ const Navbar = () => {
                           'block px-4 py-2 text-sm'
                         )}
                       >
-                        Support
+                        Suporte
                       </a>
                     )}
                   </Menu.Item>
@@ -95,7 +99,7 @@ const Navbar = () => {
                           'block px-4 py-2 text-sm'
                         )}
                       >
-                        License
+                        Licença
                       </a>
                     )}
                   </Menu.Item>
@@ -107,33 +111,101 @@ const Navbar = () => {
       </div>
       {/* Middle */}
       <div className="hidden md:flex grow-[2] items-center justify-center cursor-text">
-        <div className="bg-gray-800 text-white flex justify-between items-center max-w-[400px] w-full m-auto p-2 px-4 rounded-md">
+        <div className="bg-gray-800 text-white flex justify-between items-center max-w-[400px] w-full m-auto p-2 px-4 rounded-full">
           <div>
             <input
               type="text"
-              className="bg-transparent border-none text-white focus:outline-none"
+              className="text-white bg-transparent border-none focus:outline-none"
               placeholder="Buscar"
             />
           </div>
-          <div className="cursor-pointer px-2">
+          <div className="px-2 cursor-pointer">
             <BsSearch className="font-bold" />
           </div>
         </div>
       </div>
       {/* Right Side */}
-      <div className="hidden md:flex grow items-center justify-end">
-        <div className="flex items-center">
-          <Link href="/account">
-            <button className="px-4 py-[6px] rounded-full font-bold bg-[#3F00E1] mr-2">
-              Conta
-            </button>
-          </Link>
-          <BsPerson size={30} />
-        </div>
+      <div className="items-center justify-end hidden md:flex grow">
+        {session ? (
+          <div className="flex items-center">
+            <Link href="/account">
+              <div>
+                <p className="pr-4 cursor-pointer">Olá, {session.user.name}</p>
+              </div>
+            </Link>
+            <Menu as="div" className="relative text-left">
+              <div className="flex">
+                <Menu.Button>
+                  <Image
+                    src={session.user.image}
+                    width="45px"
+                    height="45px"
+                    alt="Profile"
+                    className="rounded-full"
+                  />
+                </Menu.Button>
+              </div>
+
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-[#0e0e10] ring-1 ring-white ring-opacity-5 focus:outline-none">
+                  <div className="py-1">
+                    <Menu.Item>
+                      {({ active }) => (
+                        <Link
+                          href="/account"
+                          className={classNames(
+                            active
+                              ? 'bg-gray-500 text-gray-100'
+                              : 'text-gray-200',
+                            'block px-4 py-2 text-sm'
+                          )}
+                        >
+                          Conta
+                        </Link>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <p
+                          onClick={() => signOut()}
+                          className={classNames(
+                            active
+                              ? 'bg-gray-500 text-gray-100'
+                              : 'text-gray-200',
+                            'block px-4 py-2 text-sm'
+                          )}
+                        >
+                          Sair
+                        </p>
+                      )}
+                    </Menu.Item>
+                  </div>
+                </Menu.Items>
+              </Transition>
+            </Menu>
+          </div>
+        ) : (
+          <div className="flex items-center">
+            <Link href="/account">
+              <button className="px-4 py-[6px] rounded-full font-bold bg-[#3F00E1] mr-2">
+                Conta
+              </button>
+            </Link>
+            <BsPerson size={30} />
+          </div>
+        )}
       </div>
 
       {/* Hamburguer Menu */}
-      <div onClick={handleNav} className="block md:hidden z-10 cursor-pointer">
+      <div onClick={handleNav} className="z-10 block cursor-pointer md:hidden">
         {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
       </div>
 
@@ -146,16 +218,16 @@ const Navbar = () => {
         }
       >
         <ul className="text-center">
-          <li className="p-4 text-3xl font-bold">
+          <li onClick={() => setNav(false)} className="p-4 text-3xl font-bold">
             <Link href="/">Home</Link>
           </li>
-          <li className="p-4 text-3xl font-bold">
-            <Link href="/">Ao Vivo</Link>
+          <li onClick={() => setNav(false)} className="p-4 text-3xl font-bold">
+            <Link href="/#live">Ao Vivo</Link>
           </li>
-          <li className="p-4 text-3xl font-bold">
-            <Link href="/">Categorias</Link>
+          <li onClick={() => setNav(false)} className="p-4 text-3xl font-bold">
+            <Link href="/#categories">Categorias</Link>
           </li>
-          <li className="p-4 text-3xl font-bold">
+          <li onClick={() => setNav(false)} className="p-4 text-3xl font-bold">
             <Link href="/account">Conta</Link>
           </li>
         </ul>
