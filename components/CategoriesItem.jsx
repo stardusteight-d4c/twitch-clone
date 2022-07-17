@@ -7,16 +7,16 @@ const CategoriesItem = ({ img, title, viewers, tag1, tag2 }) => {
       <Image src={img} width="261px" height="350px" alt="/" />
       <div>
         <p className="font-bold">{title}</p>
-        <p className="text-sm text-gray-500 py-[2px]">{viewers}</p>
+        <p className="text-sm text-gray-500 py-[2px]">{viewers}K viewers</p>
         <div className="flex">
           <div>
-            <p className="text-sm bg-gray-700 rounded-full inline-block p-[2px] px-3">
+            <p className="text-xs bg-gray-700 rounded-full inline-block p-[2px] px-3 mr-2">
               {tag1}
             </p>
           </div>
           <div>
             {tag2 ? (
-              <p className="text-sm bg-gray-700 rounded-full inline-block p-[2px] px-3">
+              <p className="text-xs bg-gray-700 rounded-full inline-block p-[2px] px-3">
                 {tag2}
               </p>
             ) : null}

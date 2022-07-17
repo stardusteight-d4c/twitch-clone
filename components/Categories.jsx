@@ -1,6 +1,6 @@
 import React from 'react'
+import { categories } from '../data/mock-data'
 import CategoriesItem from './CategoriesItem'
-import category1 from '../public/assets/categorie1.jpg'
 
 const Categories = () => {
   return (
@@ -10,75 +10,16 @@ const Categories = () => {
       </h2>
       {/* Container */}
       <div className="grid grid-cols-2 gap-2 py-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-10">
-        <CategoriesItem
-          img={category1}
-          title="Valorant"
-          viewers="38k"
-          tag1="FPS"
-          tag2="Shooter"
-        />
-        <CategoriesItem
-          img={category1}
-          title="Valorant"
-          viewers="38k"
-          tag1="FPS"
-          tag2="Shooter"
-        />
-        <CategoriesItem
-          img={category1}
-          title="Valorant"
-          viewers="38k"
-          tag1="FPS"
-          tag2="Shooter"
-        />
-        <CategoriesItem
-          img={category1}
-          title="Valorant"
-          viewers="38k"
-          tag1="FPS"
-          tag2="Shooter"
-        />
-        <CategoriesItem
-          img={category1}
-          title="Valorant"
-          viewers="38k"
-          tag1="FPS"
-          tag2="Shooter"
-        />
-                <CategoriesItem
-          img={category1}
-          title="Valorant"
-          viewers="38k"
-          tag1="FPS"
-          tag2="Shooter"
-        />
-        <CategoriesItem
-          img={category1}
-          title="Valorant"
-          viewers="38k"
-          tag1="FPS"
-          tag2="Shooter"
-        />
-        <CategoriesItem
-          img={category1}
-          title="Valorant"
-          viewers="38k"
-          tag1="FPS"
-          tag2="Shooter"
-        />
-        <CategoriesItem
-          img={category1}
-          title="Valorant"
-          viewers="38k"
-          tag1="FPS"
-        />
-        <CategoriesItem
-          img={category1}
-          title="Valorant"
-          viewers="38k"
-          tag1="FPS"
-          tag2="Shooter"
-        />
+        {categories.map((item, index) => (
+          <CategoriesItem
+            key={index}
+            img={item.img}
+            title={item.title}
+            viewers={item.viewers}
+            tag1={item.tag1}
+            tag2={item.tag2}
+          />
+        ))}
       </div>
     </div>
   )
