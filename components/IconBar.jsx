@@ -27,12 +27,12 @@ const IconBar = () => {
           <Image src={Headphones} alt="/" />
         </div>
         {/* Grid Item */}
-        <div className="w-full h-[58px] bg-[#9147ff] hover:bg-[#a468ff] hover:cursor-pointer flex justify-between items-center px-4 rounded">
+        <div className="w-full h-[58px] bg-[#9147ff] hover:bg-[#ad7df5] hover:cursor-pointer flex justify-between items-center px-4 rounded">
           <p className="text-2xl font-bold">Esports</p>
           <Image src={Trophy} alt="/" />
         </div>
         {/* Grid Item */}
-        <div className="w-full h-[58px] bg-[#9147ff] hover:bg-[#a468ff] hover:cursor-pointer flex justify-between items-center px-4 rounded">
+        <div className="w-full h-[58px] bg-[#9147ff] hover:bg-[#ad7df5] hover:cursor-pointer flex justify-between items-center px-4 rounded">
           <p className="text-2xl font-bold">Creative</p>
           <Image src={Paint} alt="/" />
         </div>
