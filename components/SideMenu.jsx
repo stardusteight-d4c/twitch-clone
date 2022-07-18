@@ -49,29 +49,34 @@ const SideMenu = () => {
           <RiMovieLine size={20} className="justify-center w-full xl:hidden" />
         </p>
       </div>
-      {top_channels.map((item, index) => (
-        <div key={index} className="inline-flex items-center w-full  px-2 py-[2px] hover:cursor-pointer hover:bg-zinc-900">
-          <div>
-            <Image
-              src={item.avatar_url}
-              width="50px"
-              height="50px"
-              alt={item.username}
-              className="rounded-full"
-            />
-          </div>
-          <div className="justify-between hidden w-full xl:flex">
-            <div>
-              <p className='font-medium text-[#dedee3]'>{item.username}</p>
-              <p className="text-gray-400">{item.game_name}</p>
+      <div className="mb-2">
+        {top_channels.map((item, index) => (
+          <div
+            key={index}
+            className="inline-flex items-center w-full  px-2 my-[2px] hover:cursor-pointer hover:bg-zinc-900"
+          >
+            <div className="mr-2">
+              <Image
+                src={item.avatar_url}
+                width="50px"
+                height="50px"
+                alt={item.username}
+                className="rounded-full"
+              />
             </div>
-            <p className="flex items-center">
-              <BsDot color="red" size={40} />
-              {item.rank}K
-            </p>
+            <div className="justify-between hidden w-full xl:flex">
+              <div>
+                <p className="font-medium text-[#dedee3]">{item.username}</p>
+                <p className="text-xs text-gray-400">{item.game_name}</p>
+              </div>
+              <p className="flex items-center">
+                <BsDot color="red" size={40} />
+                {item.rank}K
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   )
 }
