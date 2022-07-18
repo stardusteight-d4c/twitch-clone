@@ -12,17 +12,17 @@ const IconBar = () => {
       {/* Container */}
       <div className="grid gap-4 py-8 border-t border-gray-700 sm:grid-cols-3 lg:grid-cols-5">
         {/* Grid Item */}
-        <div className="w-full h-[58px] bg-[#9147ff] hover:bg-[#a468ff] hover:cursor-pointer flex justify-between items-center px-4 rounded">
+        <div className="w-full h-[58px] bg-[#9147ff] hover:bg-[#ad7df5] hover:cursor-pointer flex justify-between items-center px-4 rounded">
           <p className="text-2xl font-bold">Games</p>
           <Image src={Remote} alt="/" />
         </div>
         {/* Grid Item */}
-        <div className="w-full h-[58px] bg-[#9147ff] hover:bg-[#a468ff] hover:cursor-pointer flex justify-between items-center px-4 rounded">
+        <div className="w-full h-[58px] bg-[#9147ff] hover:bg-[#ad7df5] hover:cursor-pointer flex justify-between items-center px-4 rounded">
           <p className="text-2xl font-bold">IRL</p>
           <Image src={Mic} alt="/" />
         </div>
         {/* Grid Item */}
-        <div className="w-full h-[58px] bg-[#9147ff] hover:bg-[#a468ff] hover:cursor-pointer flex justify-between items-center px-4 rounded">
+        <div className="w-full h-[58px] bg-[#9147ff] hover:bg-[#ad7df5] hover:cursor-pointer flex justify-between items-center px-4 rounded">
           <p className="text-2xl font-bold">Music</p>
           <Image src={Headphones} alt="/" />
         </div>

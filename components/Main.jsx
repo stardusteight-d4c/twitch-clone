@@ -6,7 +6,7 @@ import LiveChannels from './LiveChannels'
 
 const Main = () => {
   return (
-    <div className="absolute left-[64px] xl:left-[240px] mx-auto">
+    <div className="absolute left-[64px] xl:left-[240px] mx-auto -z-10">
       <Hero />
       <LiveChannels />
       <IconBar />

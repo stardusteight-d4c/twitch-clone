@@ -24,7 +24,7 @@ const Navbar = () => {
   // console.log(session)
 
   return (
-    <nav className="fixed h-14 w-full flex flex-nowrap items-center p-4 bg-[#0e0e10] mb-[2px] z-10">
+    <nav className="fixed h-14 w-full flex flex-nowrap items-center p-4 bg-[#0e0e10] mb-[2px]">
       {/* Left Side */}
       <div className="flex items-center justify-start grow">
         <Link href="/">
