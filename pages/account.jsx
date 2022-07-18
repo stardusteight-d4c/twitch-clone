@@ -20,15 +20,6 @@ const account = () => {
           <h2 className="py-8 mx-auto text-2xl font-bold">
             Boas vindas, {session.user.name}!
           </h2>
-          <div className="z-0 pb-4 mx-auto rounded-full">
-            <Image
-              src={session.user.image}
-              width="100px"
-              height="100px"
-              alt="/"
-              className="rounded-full"
-            />
-          </div>
           <button
             className="flex items-center justify-center p-3 rounded-full bg-black border border-[#9147ff]"
             onClick={() => signOut()}
