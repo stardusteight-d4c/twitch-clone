@@ -9,10 +9,16 @@ const account = () => {
   if (session) {
     return (
       <div className="pt-[100px] flex flex-col max-w-[400px] w-full mx-auto p-4">
-        <h2 className="text-2xl font-bold mx-auto py-8">
+        <Image
+          src="/assets/thumb.jpg"
+          alt="/"
+          layout="fill"
+          className="w-screen h-screen"
+        />
+        <h2 className="z-20 py-8 mx-auto text-2xl font-bold">
           Boas vindas, {session.user.name}!
         </h2>
-        <div className="mx-auto pb-4 rounded-full">
+        <div className="pb-4 mx-auto rounded-full">
           <Image
             src={session.user.image}
             width="100px"
@@ -21,7 +27,10 @@ const account = () => {
             className="rounded-full"
           />
         </div>
-        <button className="flex items-center justify-center p-3 rounded-[4px] bg-gray-900 border border-[#3F00E1]" onClick={() => signOut()}>
+        <button
+          className="z-20 flex items-center justify-center p-3 rounded-full bg-black border border-[#9147ff]"
+          onClick={() => signOut()}
+        >
           Sair
         </button>
       </div>
@@ -29,21 +38,27 @@ const account = () => {
   }
   return (
     <div className="pt-[100px] flex flex-col max-w-[400px] w-full mx-auto p-4">
-      <h2 className="text-3xl font-bold">Entrar</h2>
-      <p className="py-4">Escolha uma conta para se registrar</p>
+      <Image
+        src="/assets/thumb.jpg"
+        alt="/"
+        layout="fill"
+        className="w-screen h-screen"
+      />
+      <h2 className="z-20 text-3xl font-bold">Entrar</h2>
+      <p className="z-20 py-4">Escolha uma conta para se registrar</p>
       <button
-        className="flex items-center justify-center p-3 bg-black rounded-[4px] border border-[#3F00E1] my-2"
+        className="z-20 flex items-center justify-center p-3 bg-black rounded-[4px] border border-[#9147ff] my-2"
         onClick={() => signIn()}
       >
-        <FaGithub size={25} className="mr-2" />
-        Entrar com<span className="font-bold pl-1">Github</span>
+        <FaGithub size={25} className="z-20 mr-2" />
+        Entrar com<span className="z-20 pl-1 font-bold">Github</span>
       </button>
       <button
-        className="flex items-center justify-center p-3 bg-white text-black rounded-[4px] border border-white my-2"
+        className="z-20 flex items-center justify-center p-3 bg-white text-black rounded-[4px] border border-white my-2"
         onClick={() => signIn()}
       >
         <FaGoogle size={25} className="mr-2" />
-        Entrar com<span className="font-bold pl-1">Google</span>
+        Entrar com<span className="pl-1 font-bold">Google</span>
       </button>
     </div>
   )

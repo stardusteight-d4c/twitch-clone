@@ -38,7 +38,7 @@ const Navbar = () => {
             />
           </a>
         </Link>
-        <p className="p-4 font-bold">Browse</p>
+        <p className="p-4 font-bold hover:cursor-pointer">Browse</p>
         <div className="p-4">
           <Menu as="div" className="relative text-left ">
             <div className="flex">
@@ -130,7 +130,12 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link href="/account">
               <div>
-                <p className="pr-4 cursor-pointer">Olá, <span className='text-[#9147ff] font-semibold'>{session.user.name}</span></p>
+                <p className="pr-4 cursor-pointer">
+                  Olá,{' '}
+                  <span className="text-[#9147ff] font-semibold">
+                    {session.user.name}
+                  </span>
+                </p>
               </div>
             </Link>
             <Menu as="div" className="relative text-left">
@@ -158,34 +163,19 @@ const Navbar = () => {
                 <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-[#0e0e10] ring-1 ring-white ring-opacity-5 focus:outline-none">
                   <div className="py-1">
                     <Menu.Item>
-                      {({ active }) => (
-                        <Link
-                          href="/account"
-                          className={classNames(
-                            active
-                              ? 'bg-gray-500 text-gray-100'
-                              : 'text-gray-200',
-                            'block px-4 py-2 text-sm'
-                          )}
-                        >
+                      <Link href="/account">
+                        <p className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-500 hover:text-gray-100 hover:cursor-pointer">
                           Conta
-                        </Link>
-                      )}
+                        </p>
+                      </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      {({ active }) => (
-                        <p
-                          onClick={() => signOut()}
-                          className={classNames(
-                            active
-                              ? 'bg-gray-500 text-gray-100'
-                              : 'text-gray-200',
-                            'block px-4 py-2 text-sm'
-                          )}
-                        >
-                          Sair
-                        </p>
-                      )}
+                      <p
+                        onClick={() => signOut()}
+                        className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-500 hover:text-gray-100 hover:cursor-pointer"
+                      >
+                        Sair
+                      </p>
                     </Menu.Item>
                   </div>
                 </Menu.Items>
@@ -195,7 +185,7 @@ const Navbar = () => {
         ) : (
           <div className="flex items-center">
             <Link href="/account">
-              <button className="px-4 py-[6px] rounded-full font-bold bg-[#3F00E1] mr-2">
+              <button className="px-4 py-[6px] rounded-full font-bold bg-[#9147ff] mr-2">
                 Conta
               </button>
             </Link>
