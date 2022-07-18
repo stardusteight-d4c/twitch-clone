@@ -3,7 +3,7 @@ import React from 'react'
 
 const CategoriesItem = ({ img, title, viewers, tag1, tag2 }) => {
   return (
-    <div className="p-2">
+    <div className="p-2 duration-300 ease-in hover:cursor-pointer hover:scale-105">
       <Image src={img} width="261px" height="350px" alt="/" />
       <div>
         <p className="font-bold">{title}</p>

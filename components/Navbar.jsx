@@ -130,7 +130,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link href="/account">
               <div>
-                <p className="pr-4 cursor-pointer">Olá, {session.user.name}</p>
+                <p className="pr-4 cursor-pointer">Olá, <span className='text-[#9147ff] font-semibold'>{session.user.name}</span></p>
               </div>
             </Link>
             <Menu as="div" className="relative text-left">

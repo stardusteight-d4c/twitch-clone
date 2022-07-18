@@ -74,10 +74,10 @@ export const rec_channels = [
 export const top_channels = [
   {
     id: 1,
-    avatar_url: 'https://robohash.org/sequiutea.png?size=50x50&set=set1',
-    username: 'bjeskin0',
-    game_name: 'Stronghold',
-    rank: 73,
+    avatar_url: '/assets/streamers/alanzoka.png',
+    username: 'alanzoka',
+    game_name: 'Just Chatting',
+    rank: 8.8,
   },
   {
     id: 2,
@@ -111,7 +111,7 @@ export const categories = [
     title: 'Just Chatting',
     viewers: 340,
     tag1: 'IRL',
-    tag2: null
+    tag2: null,
   },
   {
     id: 2,
@@ -184,5 +184,88 @@ export const categories = [
     viewers: 5.1,
     tag1: 'Survival',
     tag2: 'Open World',
+  },
+]
+
+export const live_channels = [
+  {
+    id: 1,
+    img: '/assets/live/ayellol.png',
+    profile_img: '/assets/streamers/ayellol.png',
+    title: 'GAMEPLAYYYYYYYY !curso !bdl !betway !overclock !porofessor !coach',
+    user: 'Ayellol',
+    game: 'League of Legends',
+  },
+  {
+    id: 2,
+    img: '/assets/live/gaules.png',
+    profile_img: '/assets/streamers/gaules.png',
+    title: 'Rerun: NAVI VS FAZE FINAL IEM Cologne 2022- !vote - Siga @gaules nas redes sociais',
+    user: 'Gaules',
+    game: 'Counter-Strike: Global Offensive',
+  },
+ {
+    id: 3,
+    img: '/assets/live/smzinho.png',
+    profile_img: '/assets/streamers/ayellol.png',
+    title: 'TARDE DO MOZI E VYKAS HARD AS 19 - !SAMSUNG - !MONITOR - !BETANO',
+    user: 'Smzinho',
+    game: 'Lost Ark',
+  },
+ {
+    id: 4,
+    img: '/assets/live/gihiga.png',
+    profile_img: '/assets/streamers/gihiga.png',
+    title: '[pt/en] ✧ lets desenhar >:( riot contest !contest !estelar ♡ ˚ ✧',
+    user: 'gihiga',
+    game: 'Art',
+  },
+  {
+    id: 5,
+    img: '/assets/live/mch_agg.png',
+    profile_img: '/assets/streamers/mch_agg.png',
+    title: 'O SUPRASSUMO DO CS:GO - RERUN - !SORTEIO !RIVALRY !GRUPOGRATIS',
+    user: 'mch_AGG',
+    game: 'Counter-Strike: Global Offensive',
+  },
+  {
+    id: 6,
+    img: '/assets/live/suetam1v4.png',
+    profile_img: '/assets/streamers/suetam1v4.png',
+    title: 'WATCHPARTY FNCS FINALS !pix !fncs',
+    user: 'suetam1v4',
+    game: 'Fortnite',
+  },
+  {
+    id: 7,
+    img: '/assets/live/pijack11.png',
+    profile_img: '/assets/streamers/pijack11.png',
+    title: 'TI NAAATA || !sociais !skin !aorus !ad !tattoo',
+    user: 'pijack11',
+    game: 'League of Legends',
+  },
+ {
+    id: 8,
+    img: '/assets/live/yumytv.png',
+    profile_img: '/assets/streamers/yumytv.png',
+    title: 'TARDE DO MOZI E VYKAS HARD AS 19 - !SAMSUNG - !MONITOR - !BETANO',
+    user: 'yumytv',
+    game: 'World of Warcraft',
+  },
+ {
+    id: 9,
+    img: '/assets/live/pandadruj.png',
+    profile_img: '/assets/streamers/pandadruj.png',
+    title: 'VEM VELL SEU GOSTOSO - DESPERTAR DA DRAKANIA',
+    user: 'PandaDruj',
+    game: 'Black Desert',
+  },
+  {
+    id: 10,
+    img: '/assets/live/cellbit.png',
+    profile_img: '/assets/streamers/cellbit.png',
+    title: 'DIA DE REDDITuuUuuUUu live fantasma apenas os escolhidos conseguem...',
+    user: 'Cellbit',
+    game: 'Bad End Theater',
   },
 ]
