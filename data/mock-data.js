@@ -207,7 +207,7 @@ export const live_channels = [
  {
     id: 3,
     img: '/assets/live/smzinho.png',
-    profile_img: '/assets/streamers/ayellol.png',
+    profile_img: '/assets/streamers/smzinho.png',
     title: 'TARDE DO MOZI E VYKAS HARD AS 19 - !SAMSUNG - !MONITOR - !BETANO',
     user: 'Smzinho',
     game: 'Lost Ark',
