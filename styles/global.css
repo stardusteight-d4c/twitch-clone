@@ -9,3 +9,16 @@ html, body {
 body {
   -webkit-font-smoothing: antialiased
 }
+
+.visible-scrollbar, .invisible-scrollbar, .mostly-customized-scrollbar {
+  display: block;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #868687;
+  border-radius: 20px;
+}

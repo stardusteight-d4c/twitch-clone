@@ -6,7 +6,7 @@ import { rec_channels, top_channels } from '../data/mock-data'
 
 const SideMenu = () => {
   return (
-    <div className="fixed w-14 sm:w-16 xl:w-[240px] h-screen bg-[#0e0e10] -z-10 overflow-y-scroll">
+    <div className="fixed w-14 sm:w-16 xl:w-[240px] h-screen bg-[#0e0e10] -z-10 overflow-y-scroll mostly-customized-scrollbar">
       <div>
         <p className="hidden p-2 pb-4 text-sm font-bold uppercase xl:flex">
           Canais Recomendados
