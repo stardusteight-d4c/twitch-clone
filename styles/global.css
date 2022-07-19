@@ -6,7 +6,7 @@ html, body {
   @apply bg-black text-white scroll-smooth font-roboto
 }
 
-body {
+body, html {
   -webkit-font-smoothing: antialiased
 }
 
